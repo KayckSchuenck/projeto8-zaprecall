@@ -1,9 +1,10 @@
 import React from 'react';
 import Perguntas from "./perguntas";
+import Footer from './footer';
 
 export default function Tela2(){
     const [perguntasRespondidas,setPerguntasRespondidas]=React.useState(0)
-
+    const[icons,setIcons]=React.useState([])
     const deck1=[{
         Q: "O que é JSX?", 
         R: "Uma extensão de linguagem do JavaScript"
@@ -44,12 +45,9 @@ export default function Tela2(){
         ZapRecall
     </header>
     <div className="conteudo">
-    {deck1.map((elemento,index)=><Perguntas key={index} numero={index} questao={elemento.Q} resposta={elemento.R} setQtd={setPerguntasRespondidas} qtd={perguntasRespondidas}/>)}
+    {deck1.map((elemento,index)=><Perguntas key={index} numero={index} questao={elemento.Q} resposta={elemento.R} setQtd={setPerguntasRespondidas} qtd={perguntasRespondidas} add={setIcons} icon={icons}/>)}
     </div>
-    
-    <footer>
-        {perguntasRespondidas}/{deck1.length} CONCLUÍDOS
-    </footer>
+    <Footer deck={deck1} perguntasRespondidas={perguntasRespondidas} icons={icons}/>
     </>
     )
 }

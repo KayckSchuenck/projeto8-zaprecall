@@ -3,6 +3,10 @@ import { NaoLembrei,QuaseNaoLembrei,Lembrei } from './resultados'
 
 export default function Perguntas(props){
     const [questions,setQuestions]=React.useState("inicio")
+    const mudar=(numero)=>{
+        console.log("aaa")
+        setQuestions(numero)
+    }
     if(questions==="inicio"){
         return(
             <div className="pergunta">
@@ -23,17 +27,25 @@ export default function Perguntas(props){
             <div className="final perguntaAberta">
             {props.resposta}
             <div>
-                <button className='opcao' onClick={()=>NaoLembrei(props.setQtd,props.qtd)} >
+                <button className='opcao' onClick={()=>NaoLembrei(props.setQtd,props.qtd,props.add,props.icon,mudar)} >
                 Não Lembrei
                 </button>
-                <button className='opcao' onClick={()=>QuaseNaoLembrei(props.setQtd,props.qtd)} >
+                <button className='opcao' onClick={()=>QuaseNaoLembrei(props.setQtd,props.qtd,props.add,props.icon,mudar)} >
                 Quase não Lembrei
                 </button>
-                <button className='opcao' onClick={()=>Lembrei(props.setQtd,props.qtd)} >
+                <button className='opcao' onClick={()=>Lembrei(props.setQtd,props.qtd,props.add,props.icon,mudar)} >
                 Zap!
                 </button>
             </div>
             </div> 
         )
     }
+    if(questions==="erro"||questions==="quase"||questions==="zap"){
+        return(
+            <div className={`pergunta riscada${questions}`}>
+            Pergunta {props.index} <img src={`./assets/${questions}.svg`}/>
+            </div>
+        )
+    }
+  
 }

@@ -127,3 +127,15 @@ footer{
 .final div>button:last-child{
     background-color: #2FBE34;
 }
+.riscadaerro{
+    color:#FF3030;
+    text-decoration: line-through;
+}
+.riscadaquase{
+    color:#FF922E;
+    text-decoration: line-through;
+}
+.riscadazap{
+    color:#2FBE34;
+    text-decoration: line-through;
+}
