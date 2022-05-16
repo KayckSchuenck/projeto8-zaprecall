@@ -60,6 +60,10 @@ footer{
     position: fixed;
     bottom: 0px;
     color:#333333;
+    flex-direction: column;
+}
+footer img{
+    margin-right: 5px;
 }
 
 .conteudo{
@@ -138,4 +142,13 @@ footer{
 .riscadazap{
     color:#2FBE34;
     text-decoration: line-through;
+}
+
+.finalizacao{
+    height: 170px;
+    justify-content: space-around;
+}   
+.finalizacao div:first-child{
+    display: flex;
+    align-items: center;
 }

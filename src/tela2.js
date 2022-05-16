@@ -2,7 +2,7 @@ import React from 'react';
 import Perguntas from "./perguntas";
 import Footer from './footer';
 
-export default function Tela2(){
+export default function Tela2(props){
     const [perguntasRespondidas,setPerguntasRespondidas]=React.useState(0)
     const[icons,setIcons]=React.useState([])
     const deck1=[{
@@ -38,6 +38,7 @@ export default function Tela2(){
         R: "dizer para o React quais informações quando atualizadas devem renderizar a tela novamente"
     }
 ]
+    deck1.sort(()=>Math.random()-0.5)
     return(
     <>
     <header>
@@ -47,7 +48,7 @@ export default function Tela2(){
     <div className="conteudo">
     {deck1.map((elemento,index)=><Perguntas key={index} numero={index} questao={elemento.Q} resposta={elemento.R} setQtd={setPerguntasRespondidas} qtd={perguntasRespondidas} add={setIcons} icon={icons}/>)}
     </div>
-    <Footer deck={deck1} perguntasRespondidas={perguntasRespondidas} icons={icons}/>
+    <Footer tela={props.tela} deck={deck1} perguntasRespondidas={perguntasRespondidas} icons={icons}/>
     </>
     )
 }

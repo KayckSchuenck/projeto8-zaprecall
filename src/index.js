@@ -13,7 +13,7 @@ function App() {
     )}
 
   return (
-    <Tela2 />
+    <Tela2 tela={setTelainicial} meta={metaZaps}/>
   )}
 
 ReactDOM.render(

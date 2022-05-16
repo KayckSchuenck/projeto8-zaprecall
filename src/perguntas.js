@@ -4,7 +4,6 @@ import { NaoLembrei,QuaseNaoLembrei,Lembrei } from './resultados'
 export default function Perguntas(props){
     const [questions,setQuestions]=React.useState("inicio")
     const mudar=(numero)=>{
-        console.log("aaa")
         setQuestions(numero)
     }
     if(questions==="inicio"){
@@ -47,5 +46,4 @@ export default function Perguntas(props){
             </div>
         )
     }
-  
 }
