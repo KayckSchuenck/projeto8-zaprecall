@@ -7,9 +7,10 @@ import './style.css'
 
 function App() {
   const[telainicial,setTelainicial]=React.useState(true)
+  const[metaZaps,setMetaZaps]=React.useState(0)
   if(telainicial===true){
     return (
-    <TelaInicial tela={setTelainicial}/>
+    <TelaInicial tela={setTelainicial} setmeta={setMetaZaps} meta={metaZaps}/>
     )}
 
   return (
@@ -19,3 +20,5 @@ function App() {
 ReactDOM.render(
   <App />, document.querySelector('.root')
 );
+
+

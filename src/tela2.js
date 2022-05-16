@@ -46,9 +46,9 @@ export default function Tela2(props){
         ZapRecall
     </header>
     <div className="conteudo">
-    {deck1.map((elemento,index)=><Perguntas key={index} numero={index} questao={elemento.Q} resposta={elemento.R} setQtd={setPerguntasRespondidas} qtd={perguntasRespondidas} add={setIcons} icon={icons}/>)}
+    {deck1.map((elemento,index)=><Perguntas key={index} numero={index+1} questao={elemento.Q} resposta={elemento.R} setQtd={setPerguntasRespondidas} qtd={perguntasRespondidas} add={setIcons} icon={icons}/>)}
     </div>
-    <Footer tela={props.tela} deck={deck1} perguntasRespondidas={perguntasRespondidas} icons={icons}/>
+    <Footer tela={props.tela} deck={deck1} perguntasRespondidas={perguntasRespondidas} icons={icons} metazaps={props.meta}/>
     </>
     )
 }

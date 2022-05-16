@@ -9,7 +9,7 @@ export default function Perguntas(props){
     if(questions==="inicio"){
         return(
             <div className="pergunta">
-            Pergunta {props.index} <img src="./assets/play.svg" onClick={()=>setQuestions("perguntando")}/>
+            Pergunta {props.numero} <img src="./assets/play.svg" onClick={()=>setQuestions("perguntando")}/>
             </div>
         )
     }
